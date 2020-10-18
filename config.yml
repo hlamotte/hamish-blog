@@ -1,0 +1,71 @@
+baseURL: 'https://examplesite.com'
+title: Hamish Lamotte
+paginate: 5
+theme: hugo-PaperMod
+
+#canonifyURLs: true
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpored: false
+
+#googleAnalytics: UA-123-45
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+#  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Hamish Lamotte
+#  description: 'ExampleSite's description'
+#  author: Me
+#
+#  #images: "<link or path of image for opengraph, twitter-cards>"
+#
+  ShowReadingTime: true
+  ShowShareButtons: true
+  comments: true
+  disqusShortname: lamotte
+#  defaultTheme: auto
+#  disableThemeToggle : false
+#  disableSpecial1stPost : false
+#
+#  #assets:
+#  #  favicon: '<path / external url>'
+#
+#  label:
+#    text: "Home"
+#    icon: /apple-touch-icon.png
+#    iconHeight: 35
+#
+#  # profile-mode
+#  profileMode:
+#    enabled: false # needs to be explicitly set
+#    title: ExampleSite
+#    # imageUrl: '<img location>'
+#    # imageTitle: my image
+#    buttons:
+#      - name: Posts
+#        url: posts
+#      - name: Tags
+#        url: tags
+#
+  # home-info mode
+  homeInfoParams:
+    Title: "A data science blog"
+    Content: Learnings building data science, data apps and data engineering solutions.
+#
+  socialIcons:
+#    - name: twitter
+#      url: 'https://twitter.com/'
+#    - name: stackoverflow
+#      url: 'https://stackoverflow.com'
+    - name: github
+      url: 'https://github.com/hlamotte'
+#
+#
+#  analytics:
+#    google:
+#      SiteVerificationTag: "XYZabc"
