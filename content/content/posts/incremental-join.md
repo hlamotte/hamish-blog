@@ -21,7 +21,7 @@ I was recently presented the challenge to join two timeseries datasets together 
 ## Potential solutions
 - It may be possible to get around this problem by holding off from joining the data until it was queried, however I wanted to pre-process the join so that the joined data could be queried directly at any scale.
 - You could re-process the entire dataset every pipeline run. This was not an for a dataset that is constantly larger every day.
-- It would also be possible to manually implement a system that does not process data from either tables until both have landed. This would in-effect be re-implementing a feature that is already available with AWS Glue: [Bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html) that we are going to leverage below.
+- It would also be possible to manually implement a system that does not process data from either tables until both have landed. This would in-effect be re-implementing a feature that is already available with AWS Glue: [Bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html) which we are going to leverage below.
 
 ## Using AWS Glue Bookmarks and predicate pushdown
 AWS Glue Bookmarks allows you to only process the new data that has landed in a data pipeline since the pipeline was previously run. In the incremental join problem described above, where corresponding data that needs processed may have landed and have been processed in different runs of the pipeline, this does not fully solve the problem as corresponding data will be fed by the bookmarks to be processed in different jobs so would not be joined.

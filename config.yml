@@ -1,5 +1,5 @@
-baseURL: 'https://hamish-blog.vercel.app'
-title: Hamish Lamotte
+baseURL: 'https://datamunch.tech'
+title: DataMunch
 paginate: 5
 theme: hugo-PaperMod
 
@@ -18,7 +18,7 @@ minify:
 
 params:
 #  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Hamish Lamotte
+  title: DataMunch
 #  description: 'ExampleSite's description'
 #  author: Me
 #
@@ -55,7 +55,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "A data science blog"
-    Content: Learnings building data science, data apps and data engineering solutions.
+    Content: Wanderings exploring data science, data applications and data engineering.
 #
   socialIcons:
 #    - name: twitter
