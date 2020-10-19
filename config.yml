@@ -1,4 +1,4 @@
-baseURL: 'https://examplesite.com'
+baseURL: 'https://hamish-blog.vercel.app'
 title: Hamish Lamotte
 paginate: 5
 theme: hugo-PaperMod
