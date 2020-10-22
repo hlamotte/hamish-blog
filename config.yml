@@ -60,8 +60,8 @@ params:
   socialIcons:
 #    - name: twitter
 #      url: 'https://twitter.com/'
-#    - name: stackoverflow
-#      url: 'https://stackoverflow.com'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/hamish-lamotte/'
     - name: github
       url: 'https://github.com/hlamotte'
 #
