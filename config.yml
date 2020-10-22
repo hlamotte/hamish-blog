@@ -55,7 +55,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "A data science blog"
-    Content: Wanderings exploring data science, data applications and data engineering.
+    Content: Wanderings in data science, data applications and data engineering.
 #
   socialIcons:
 #    - name: twitter

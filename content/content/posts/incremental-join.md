@@ -28,8 +28,30 @@ AWS Glue Bookmarks allows you to only process the new data that has landed in a 
 
 The solution we came up with leveraged another feature of AWS Glue, the ability to load a subset of a table using a [predicate pushdown](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-partitions.html). We ended up with the following ETL steps in the Glue ETL job:
 
+```python
+# setup Glue ETL environment
+import sys
+from awsglue.transforms import *
+from awsglue.utils import getResolvedOptions
+from pyspark.context import SparkContext
+from awsglue.context import GlueContext
+from awsglue.job import Job
+from pyspark.sql.functions import split, col
+
+from awsglue.dynamicframe import DynamicFrame
+
+## @params: [JOB_NAME]
+args = getResolvedOptions(sys.argv, ['JOB_NAME'])
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
+```
+
 1. Load the new data that has landed since the last pipeline run using Glue Bookmarks from the AWS Glue catalog.
-``` python
+```python
 table1_new = glueContext.create_dynamic_frame.from_catalog(database="db", table_name="table1", transformation_ctx='table1_new')
 
 table2_new = glueContext.create_dynamic_frame.from_catalog(database="db", table_name="table1", transformation_ctx='table2_new')
@@ -94,6 +116,9 @@ table2_unlock = glueContext.create_dynamic_frame.from_catalog(database="db", tab
 
 5. We can then write the tables to a database, in our case S3. Depending on the type of join transformations you are doing, we found it best to use the Spark API writer in "overwrite" mode rather than the Glue DynamicFrame writers as we wanted to delete any old data that was written in a partition in a previous run and write only the newly processed data.
 ```python
+# set the overwrite mode to dynamic
+spark.conf.set("spark.sql.sources.partitionOverwriteMode","dynamic")
+
 final_df.write.partitionBy(["partition1", "partition2"]).saveAsTable("db.output", format='parquet', mode='overwrite', path='s3://your-s3-path')
 ```
 
