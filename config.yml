@@ -16,18 +16,33 @@ minify:
   disableXML: true
   minifyOutput: true
 
+disqusShortname: lamotte
+
 params:
+  ShowShareButtons: true
+  ShowReadingTime: true
+  comments: true
+  homeInfoParams:
+    Title: "A data science blog"
+    Content: Wanderings in data science, data applications and data engineering.
+  socialIcons:
+    - name: github
+      url: 'https://github.com/hlamotte'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/hamish-lamotte/'
+
+#  params:
 #  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: DataMunch
+ # title: DataMunch
 #  description: 'ExampleSite's description'
 #  author: Me
 #
 #  #images: "<link or path of image for opengraph, twitter-cards>"
 #
-  ShowReadingTime: true
-  ShowShareButtons: true
-  comments: true
-  disqusShortname: lamotte
+#  ShowReadingTime: true
+#  ShowShareButtons: true
+#  comments: true
+#  disqusShortname: lamotte
 #  defaultTheme: auto
 #  disableThemeToggle : false
 #  disableSpecial1stPost : false
@@ -42,30 +57,44 @@ params:
 #
 #  # profile-mode
 #  profileMode:
-#    enabled: false # needs to be explicitly set
-#    title: ExampleSite
+#    enabled: true # needs to be explicitly set
+#    title: A data science blog
 #    # imageUrl: '<img location>'
 #    # imageTitle: my image
 #    buttons:
-#      - name: Posts
-#        url: posts
+#      - name: About
+#        url: about
 #      - name: Tags
 #        url: tags
+#      - name: Posts
+#        url: posts
+
 #
   # home-info mode
-  homeInfoParams:
-    Title: "A data science blog"
-    Content: Wanderings in data science, data applications and data engineering.
+#  homeInfoParams:
+#    Title: "A data science blog"
+#    Content: Wanderings in data science, data applications and data engineering.
+ #   Buttons:
+ #     - name: About
+ #       url: about
+ #     - name: Tags
+ #       url: tags
 #
-  socialIcons:
+#  socialIcons:
 #    - name: twitter
 #      url: 'https://twitter.com/'
-    - name: linkedin
-      url: 'https://www.linkedin.com/in/hamish-lamotte/'
-    - name: github
-      url: 'https://github.com/hlamotte'
+#    - name: linkedin
+#      url: 'https://www.linkedin.com/in/hamish-lamotte/'
+#    - name: github
+#      url: 'https://github.com/hlamotte'
 #
 #
 #  analytics:
 #    google:
 #      SiteVerificationTag: "XYZabc"
+
+menu:
+  main:
+    - name: About
+      weight: 1
+      url: /about/
