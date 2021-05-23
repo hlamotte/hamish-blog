@@ -20,6 +20,7 @@ Originally trained as a scientist, I am experienced in working directly with cus
 I have worked in data science developing data-driven solutions and want to contribute back to the community, leading me to create DataMunch.
 
 Examples of solutions I have developed include:
+- Health metrics for quantifying scientific instrument health
 - Dashboards for monitoring scientific instrument health
 - Pipelines for transforming and joining terabytes of data
 - Automated reporting tools for semiconductor manufacturing environmental monitoring.
