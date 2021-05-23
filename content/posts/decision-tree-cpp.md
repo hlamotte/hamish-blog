@@ -1,6 +1,6 @@
 ---
 title: "Implementing a Decision Tree from scratch using C++"
-date: 2021-05-24T14:43:55+12:00
+date: 2021-05-24T10:43:55+12:00
 draft: false
 comments: true
 tags: ['C++']
